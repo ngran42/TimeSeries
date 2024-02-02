@@ -11,8 +11,8 @@ import matplotlib.pyplot as plt
 plt.style.use('fivethirtyeight')
 
 # COMMAND ----------
-
-df = spark.read.format ("csv").load("dbfs:/mnt/customer-analytics/NGrannum/data.csv", header=True)
+#load data file
+df = spark.read.format ("csv").load("dbfs:/mnt/customer-analytics/foldername/data.csv", header=True)
 
 # COMMAND ----------
 
