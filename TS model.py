@@ -1,4 +1,3 @@
-# Databricks notebook source
 # xgboost
 import xgboost
 print("xgboost", xgboost.__version__)
@@ -128,7 +127,7 @@ def xgboost_forecast(train, testX):
 
 # COMMAND ----------
 
-# forecast annual new customer count with xgboost
+# forecast annual retail customers with xgboost
 from numpy import asarray
 from pandas import read_csv
 from pandas import DataFrame
@@ -196,7 +195,7 @@ def walk_forward_validation(data, n_test):
 	return error, test[:, -1], predictions
 
 # load the dataset
-series = read_csv('daily-total-female-births.csv', header=0, index_col=0)
+series = read_csv('data.csv', header=0, index_col=0)
 values = series.values
 # transform the time series data into supervised learning
 data = series_to_supervised(values, n_in=6)
@@ -211,7 +210,7 @@ pyplot.show()
 
 # COMMAND ----------
 
-# finalize model and make a prediction for monthly births with xgboost
+# finalize model and make a prediction for monthly series with xgboost
 from numpy import asarray
 from pandas import read_csv
 from pandas import DataFrame
@@ -237,7 +236,7 @@ def series_to_supervised(data, n_in=1, n_out=1, dropnan=True):
 	return agg.values
 
 # load the dataset
-#series = read_csv('daily-total-female-births.csv', header=0, index_col=0)
+#series = read_csv('data.csv', header=0, index_col=0)
 values = data.values
 # transform the time series data into supervised learning
 train = series_to_supervised(values, n_in=6)
