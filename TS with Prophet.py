@@ -23,7 +23,7 @@ pd.set_option('display.float_format', lambda x: '%.2f' % x)
 
 # COMMAND ----------
 
-df = spark.read.format ("csv").load("dbfs:/mnt/customer-analytics/foldername/dataframe.csv", header=True)
+df = spark.read.format ("csv").load("dbfs:/mnt/foldername/foldername/dataframe.csv", header=True)
 df.show()
 
 # COMMAND ----------
@@ -40,7 +40,7 @@ df = df.withColumn("ds", df["ds"].cast(TimestampType()))
 
 # COMMAND ----------
 
-df = spark.read.format ("csv").load("dbfs:/mnt/customer-analytics/foldername/dataframe.csv", header=True)
+df = spark.read.format ("csv").load("dbfs:/mnt/foldername/foldername/dataframe.csv", header=True)
 df.show()
 
 # COMMAND ----------
