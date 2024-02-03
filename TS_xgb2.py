@@ -22,7 +22,7 @@ plt.style.use('seaborn-bright')
 
 # COMMAND ----------
 
-df = spark.read.format ("csv").load("dbfs:/mnt/customer-analytics/NGrannum/new_cust_xgb.csv", header=True)
+df = spark.read.format ("csv").load("dbfs:/mnt/foldername/new_cust_xgb.csv", header=True)
 df.head(5)
 
 # COMMAND ----------
