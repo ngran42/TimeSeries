@@ -12,7 +12,7 @@ plt.style.use('fivethirtyeight')
 
 # COMMAND ----------
 #load data file
-df = spark.read.format ("csv").load("dbfs:/mnt/customer-analytics/foldername/data.csv", header=True)
+df = spark.read.format ("csv").load("dbfs:/mnt/foldername/data.csv", header=True)
 
 # COMMAND ----------
 
